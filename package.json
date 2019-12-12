@@ -1,0 +1,31 @@
+{
+	"name": "overlapping-ranges-layout",
+	"description": "Compute a layout of overlapping ranges.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"example.js"
+	],
+	"keywords": [
+		"range",
+		"layout",
+		"stacked"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/overlapping-ranges-layout",
+	"repository": "derhuerst/overlapping-ranges-layout",
+	"bugs": "https://github.com/derhuerst/overlapping-ranges-layout/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=10"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+	},
+	"scripts": {
+		"test": "node test.js",
+		"prepublishOnly": "npm test"
+	}
+}
