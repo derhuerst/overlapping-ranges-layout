@@ -1,6 +1,6 @@
 'use strict'
 
-const { deepStrictEqual } = require('assert')
+const { deepStrictEqual, doesNotThrow } = require('assert')
 const computeLayout = require('.')
 
 // ---A---
@@ -31,5 +31,12 @@ deepStrictEqual(computeLayout(sections), [
 	[3, ['D', 'B', 'E']],
 	[1, ['D', ___, ___]],
 ])
+
+// works with ranges that are not primitive types
+doesNotThrow(() => {
+	computeLayout([
+		[1, [{foo: 'bar'}]]
+	])
+})
 
 console.info('tests successful ✔︎')
