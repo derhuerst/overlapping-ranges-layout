@@ -20,7 +20,37 @@ npm install overlapping-ranges-layout
 ## Usage
 
 ```js
-todo
+const computeLayout = require('overlapping-ranges-layout')
+
+// see also the flatten-overlapping-ranges package
+// ---A---
+//   -----B------
+//      --C--
+//         ----D---
+const sections = [
+	[2, ['A'               ]],
+	[3, ['A', 'B'          ]],
+	[2, ['A', 'B', 'C'     ]],
+	[1, [     'B', 'C'     ]],
+	[2, [     'B', 'C', 'D']],
+	[1, [     'B',      'D']],
+	[2, [               'D']]
+]
+
+const layout = computeLayout(sections)
+console.log(layout)
+```
+
+```js
+[
+	[2, ['A'           ]],
+	[3, ['A',  'B'     ]],
+	[2, ['A',  'B', 'C']],
+	[1, [null, 'B', 'C']],
+	[2, ['D',  'B', 'C']],
+	[1, ['D',  'B'     ]],
+	[2, ['D'           ]]
+]
 ```
 
 
